@@ -1,0 +1,17 @@
+<html>
+    <script type="text/javascript">
+    function showProduct(){
+        var val=document.getElementById("button").value;
+        document.getElementById("form").action="/view_products/"+val+"/";
+        document.getElementById("form").submit();                               
+       
+    }
+    </script>
+<body onload="showProduct()">
+
+<form action="/view_products/" method="POST" id="form">{% csrf_token %}
+    
+    <button value={{username}} id="button"></button>
+</form>
+</body>
+</html>

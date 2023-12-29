@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<script type="text/javascript">
+    function AddToCart(product) {
+     
+    }
+</script>
+<h1>Products</h1>
+<div class="row">
+    {%for product in products %}
+    <div class="col" style="display : 'flex'; margin-bottom : 2rem">
+
+        <div class="card" style="width: 18rem ; display:flex; height: 22rem" margin: 2rem>
+            <img src="{{ product.image_url }}" class="card-img-top" alt="Image not Found"
+                style="width: 17.5rem ; height: 10rem ; padding-left:0.5rem ">
+            <div class="card-body">
+                <h5 class="card-title" id='cart'>{{ product.name }}</h5>
+                <p class="card-text">₹{{ product.price }}/Kg </p>
+
+                <form action="./" method="post" id="submit"> {% csrf_token %}
+                    <button type="submit" value={{product.pid}} form="submit" name="sub" class="btn btn-primary" >Add To Cart</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    {% endfor%}
+</div>
+{% endblock %}

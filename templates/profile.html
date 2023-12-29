@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<!-- e9ebf8 -->
+<!-- f7f7ff -->
+<body style="background-color:#e7d9ea">
+    
+    <nav class="navbar navbar-light bg-light justify-content-between" style="background-color:#f4f3f3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">PyShop</a>
+            <form class="form-inline">
+                <button class="btn" type="button" style="padding:0 0.5rem;margin:0 0.25rem"><a class="navbar-brand" href="{% url 'products' users.username %}" style="margin:0">Product</a></button>
+                <button class="btn" type="button" style="padding:0 0.5rem;margin:0 0.25rem"><a class="navbar-brand" href="{% url 'cart' users.username %}" style="margin:0">Cart</a></button>
+                <button class="btn" type="button" style="padding:0 0.5rem;margin:0 0.25rem"><a class="navbar-brand" href="/logout" style="margin:0">Log out</a></button>
+        </div>
+    </nav>
+    
+    <div style="margin:5rem 10rem;padding:1rem;background-color:white;border:1px solid #f7f7ff;border-radius:2rem;background-color:#f7f7ff">
+        {% comment %} {%for user in users %} {% endcomment %}
+        <h1>Hello {{users.first_name}},</h1>
+        
+        <div class="info">
+            <p>First name: {{users.first_name}}</p>
+            <p>Last name: {{users.last_name}}</p>
+            <p>Username : {{users.username}}</p>
+            <p>e-mail id: {{users.email}}</p>
+        <div>    
+      
+    
+        <div class="info">
+            <p>Contact no.: {{customers.mobile}}</p>
+        <div>
+   
+
+    </div>
+</body>
+</html>
